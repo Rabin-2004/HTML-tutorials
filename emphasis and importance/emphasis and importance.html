@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Emphasis and Importance </title>
+</head>
+<body>
+    
+    <!-- In HTML we use <em> tag to emphasize texts in the document. These are recognized by screen readers and can be set to be read in different tone of voice. <em> is italic by default but we shouldn't use it to italize the text. CSS font-style or <i> tag will be better for that purpose.-->
+   <p> <em> This is an emphasized text. </em> </p>
+
+    <!-- We use <strong> tag to emphasize important words. As well as making the document more useful, again these are recognized by screen readers, which can be configured to speak them in a different tone of voice. Browsers style this as bold text by default. But we shouldn't use this tag for bold purposes only. CSS font-weight or <b> tag would be suitable for that.-->
+
+    <p>This liquid is <strong>highly toxic</strong>.</p>
+
+    <!-- We can nest the em and strong tags inside each other-->
+     <p> <em> Caution: The content in this jar is <strong> highly flammable.</strong></em></p>
+
+     <!-- The italic, bold and underline tags were used traditionally when CSS was poorly developed. The <i> tag is used for italic, <b> tag for bold and <u> tag for underlining the element-->
+    
+    <!-- HTML5 redefined these tags with some semanttic roles. Here is the role in summary, It's only appropriate to use <b>, <i>, or <u> to convey a meaning traditionally conveyed with bold, italics, or underline when there isn't a more suitable element; and there usually is. Consider whether <strong>, <em>, <mark>, or <span> might be more appropriate.-->
+
+    <!-- Always keep an accessibility mindset. The concept of italics isn't very helpful to people using screen readers, or to people using a writing system other than the Latin alphabet. -->
+
+    <!-- 
+    <i> is used to convey a meaning traditionally conveyed by italic: foreign words, taxonomic designation, technical terms, a thought…
+    <b> is used to convey a meaning traditionally conveyed by bold: keywords, product names, lead sentence…
+    <u> is used to convey a meaning traditionally conveyed by underline: proper name, misspelling…
+    -->
+    
+    <p> The Indian Bull frog, scientifically named as, <i> <u> Hoplobatrachus tigerinus </u> </i> is a species of large, green frog with a triangular shape that is found in South and South-east asia.</p>
+</body>
+</html>

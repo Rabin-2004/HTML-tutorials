@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Text Features</title>
+</head>
+<body>
+    <!-- HTML use features to use quotations be it block or inline quotations-->
+
+    <!-- If a section of block level contents be it paragraph, a list, multiple paragraphs etc. are quoted from somewhere else, you should wrap it inside <blockquote> and include a URL pointing to the source using cite attribute-->
+        <p> Here is a blockqote:</p>
+        <blockquote cite="https://en.wikipedia.org/wiki/Atlantis">
+            <p>
+                Atlantis is a fictional island mentioned in Plato's works <em> Timaeus </em> and <em> Critias </em>as part of an allegory on the hubris of nations.
+            </p>
+        </blockquote>
+
+    <!-- If you want to include an inline quote e.g. a small line inside a paragraph you use an inline quotes. This works in same way as in block quote the difference is that we use a <q> tag for inline quotes and it encloses the quotes in a ""-->
+        <p> Here is an inline quote </p>
+        <p>
+            <q cite="https://en.wikipedia.org/wiki/Atlantis"> Atlantis </q> is an mythical city said to exist in ancient greece
+        </p>
+
+    <!-- cite element is different from the cite attribute of blockquote and inlinequote. Screen readers do absolutely nothing with the text inside cite attribute. The <cite> element is meant to contain the title of resource being quoted. Citations are in italic font style by default -->
+        <p> According to the 
+            <a href="https://en.wikipedia.org/wiki/Atlantis">
+                <cite> wikipedia page, </cite>
+            </a>
+            Atlantis is a mythical city that existed in the ancient greece. 
+        </p>
+
+    <!-- The <abbr> tag is used to wrap around abbreviation or acronym. When including either, provide a full expansion of the term in plain text on first use, along with the <abbr> to mark up the abbreviation. If providing the expansion in addition to the abbreviation makes little sense, and the abbreviation or acronym is a fairly shortened term, provide the full expansion of the term as the value of title attribute. This tag if provided with a title attribute provides a dotted underline for enclosing text.-->
+        <p>
+            We use <abbr>HTML</abbr>, Hypertext Markup Language, to structure our web
+            documents.
+          </p>
+
+          <p>
+            This building was designed by <abbr title="Engineer">Er.</abbr> Ram.
+          </p>
+
+    <!-- The <address> tag is used to markup contact details. This tag makes the address italic by default.-->
+        <!-- The address can be written as below in simple way-->
+        <address> Rabin Poudyal, Tokha, Kathmandu </address>
+        <!-- Or as below in more complex way-->
+         <address>
+            <p>
+                Rabin Poudyal <br>
+                Tokha<br>
+                Kathmandu <br>
+            </p>
+            <ul>
+                <li>
+                    mobile-number: 12345678
+                </li>
+                <li>
+                    email: xyz@abc.com
+                </li>
+              </ul>
+         </address>
+         
+         <!-- HTML also allows us to write superscript or sub-script text using <sup> and <sub> tags.-->
+            <p> My birthday is in 17<sup>th</sup> February</p>
+            <p>
+                U<sub>238</sub> ----------> Th<sub>234</sub> + &alpha; (helium nucleus)
+            </p>
+    
+            <!--There are number of functions to write computer codes in HTML.-->
+
+            <!-- The code tag is used to represent code snippets. Generally combined with <pre> tag which preserves white spaces.-->
+                <p>
+                <pre>
+                    <code>
+                        const button = document.body.getElementById('clickMe');
+
+                        button.onClick( ()=> console.log('I was clicked') )
+                    </code>
+                </pre>
+            </p>
+            
+            <!--The <var> tag is used to mark variable names-->
+                <p> In the above code snippet, the <var> button</var> variable triggers a function when clicked</p>
+            
+            <!-- Similarly, the <kbd> tag is used to wite keyboard input written into computer-->
+                <p> The shortct key <kbd> Ctrl </kbd> + <kbd> X </kbd> is used to cut the selected text.</p>
+
+            <!--<samp> is used to mark outputs in HTML-->
+                <div>
+                    <pre>
+                        <code>
+                            # include &lt;iostream&gt;
+                            using namespace std;
+                            int main(){
+                            float a,b,sum;
+                                cout >> "Enter your first number" >>;
+                                cin >> a;
+                                cout >> "Enter your second number">>;
+                                cin >> b;
+                                sum = a + b;
+                                cout >> "sum is" >> sum;
+                                return 0;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <p>
+                    The output of the above code will be: <br>
+                    <pre>
+                    <samp>
+                        Enter your first number 1.2
+                        Enter your second number 2.9
+                        sum is 4.1
+                    </samp>
+                </pre>
+                </p>
+
+<!-- HTML also provides <time> to markup times and dates in machine readable format. there are many different ways that humans write down dates. But these different forms cannot be easily recognized by computers — what if you wanted to automatically grab the dates of all events in a page and insert them into a calendar? The <time> element allows you to attach an unambiguous, machine-readable time/date for this purpose.-->
+ <time datetime="2024-12-24">24 December 2024</time>
+ <!-- The above format is the simple format. There are many different formats to write this same date as follows:-->
+
+ <pre>
+    <!--Standard simple date-->
+    <time datetime="2024-12-24">24 December 2024</time>
+
+    <!--Just year and month-->
+    <time datetime="2024-12">Dec 2024</time>
+
+    and so on
+</pre>
+
+
+</body>
+</html>
