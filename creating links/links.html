@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+
+<body>
+    <p id="top"> You are at the top of the page </p>
+    <!-- The href attribute, hyperlink reference or target, contains the URL of the link -->
+    <a href="https://www.google.com"> Google </a>
+
+    <!--Anything warpped in <a> is turned into a link text. Even block-level elements-->
+    <a href="https://www.google.com">
+        <h1>Google</h1>
+    </a>
+    <p>
+        The number 1. search engine
+    </p>
+
+    <!--Even images can be used to make a link-->
+    <a href="https://www.google.com">
+        <img src="google.png" alt="google-logo">
+    </a>
+
+    <!--title attribute can be used to add additional information to the link. The title contains additional information about the link, such as which kind of information the page contains, or things to be aware of on the website.-->
+    <p>
+        This is a link to
+        <a href="https://www.google.com" title="The world's number one search engine">
+            Google
+        </a>
+    </p>
+
+    <!--All the above links of google are absolute URL. A relative URL example is:-->
+    <img src="google.png" alt="apple">
+    <!--If we were accessing this google.png from another folder it would be as creatinglinks/google.png-->
+
+    <!--The dummy text here is to create a long document to create a scrollbar inorder to demonstrate linking into document fragments.-->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quod numquam perspiciatis repellat explicabo
+        asperiores, atque ipsam animi impedit! Odio ducimus, recusandae, vero enim facere est sint magnam praesentium
+        quam officiis rerum eum ullam, corporis quidem minima fugit distinctio mollitia. Fugit culpa ipsum est quisquam
+        at modi pariatur omnis officia!
+    </p>
+
+    <!--It's possible to link to a specific part of an HTML document, known as a document fragment, rather than just to the top of the document. To do this you first have to assign an id attribute to the element you want to link to-->
+    <p>
+        <a href="#top"> Move to top</a>
+    </p>
+
+    <!--When you are linking to a resource that's to be downloaded rather than opened in the browser, you can use the download attribute to provide a default save filename-->
+    <p>
+        <a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+            download="firefox-latest-64bit-installer.exe">
+            Download Latest Firefox for Windows (64-bit) (English, US)
+        </a>
+    </p>
+
+    <!--It's possible to create links or buttons that, when clicked, open a new outgoing email message rather than linking to a resource or page. This is done using the <a> element and the mailto: URL scheme.-->
+
+    <!--Simple form-->
+    <a href="mailto:example@xyz.com"> Send mail to example </a>
+    <br>
+
+    <!--All the deatils like subject,cc,bcc can also be mentioned in the URL.-->
+        <p>
+            <a href="mailto:example@hello.com?cc=abc@def.com&bcc=ghi@jkl.com&subject=The%20example%20of%20email%20link">Send mail with CC, BCC, and subject to example</a>
+        </p>
+    <!--The values of each field must be URL-encoded with non-printing characters (invisible characters like tabs, carriage returns, and page breaks) and spaces percent-escaped. Also, note the use of the question mark (?) to separate the main URL from the field values, and ampersands (&) to separate each field in the mailto: URL. This is standard URL query notation-->
+</body>
+
+</html>
