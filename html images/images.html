@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML images</title>
+</head>
+
+<body>
+
+    <!--Img tag is used to put an image in the webpage. Image is a void element. It doesnt require an closing tag. Img tag requires src  attribute to be useful. The src attribute is like the href attribute in <a> tag. It specifies the url of the image to be displayed. The URL can be absolute or relative however it is required to use relative URL. The image required for your side is recommended to be hosted locally for small setup. For bigger projects, you might use an CDN. If using image from other sources, first verify that you are allowed to use that image from their liscense.-->
+
+    <img src="triceratops.avif" alt="triceratops" width="300">
+
+    <!--Elements like <img> and <video> are sometimes referred to as replaced elements. This is because the element's content and size are defined by an external resource (like an image or video file), not by the contents of the element itself. -->
+
+    <!--The alternative text described in am image by an alt attribute gives textual description of an image. It is meant to be used by screen-readers and in the situations where the image cannot be seen/displayed or takes a long time to render because of a slow internet connection. There are also some text based browsers like Lynx which donot support image and only shows the alt text. Also seacrh engine may also match the search query with the alt text for an image -->
+
+    <img src="triceratops.av" alt="triceratops">
+    <!-- In the above example as I have misspelled the file name, the file hence cannot be found and the alt text will be displayed.-->
+
+    <img src="triceratops.avif" alt="" width="300">
+    <!--If the image is being used for decoration purposes, the image is better used as an background image using CSS properties. But in case you need to use the <img> tag the alt attribute should be assigned an empty string "" for decorative images.-->
+
+    <!-- The alt text shouldn't be redundant. If your image provides significant information, write a brief alt description or even better write it in the main text. Never repeat the alt text in the main text. -->
+
+    <a href="https://en.wikipedia.org/wiki/Triceratops">
+        <img src="triceratops.avif" alt="Link to triceratops wiki page" width="300" style="border: 2px solid red;">
+    </a>
+    <!--If you are using the image as a link text, its good practice to provide accessible link text as a description for the link. In such cases, the link description can be written using title attribute or aria-label inside the image or you may also write it in the alt attribute in the <img> tag like above.-->
+
+    <!-- The width and height attribute are used to give width and height to the image. They are written as unit less integers and give the width and height of an image in pixels.-->
+    <img src="triceratops.avif" alt="Triceratops, a herbivorous dinosaur" width="300" height="300">
+
+    <!-- There is a very good reason to use the width and height attribute in an image even if the image is fine by default. Suppose, there is text below image and the browser loads the text faster than the image. If the image doesnt have an height and width attribute, then the image when loaded will push the text below it which is distracting for the user. If you had provided the width and height attribuute the space will be pre-reserved for the image before loading which will prevent that from happening.-->
+
+    <!--Although, it is good practice to specify the actual size of your images using HTML attributes, you should not use them to resize images. If you set the image size too big, you'll end up with images that look grainy, fuzzy, or too small, and wasting bandwidth downloading an image that is not fitting the user's needs. The image may also end up looking distorted, if you don't maintain the correct aspect ratio. You should use an image editor to put your image at the correct size before putting it on your webpage. If you do need to alter an image's size, you should use CSS instead.-->
+
+
+    <!-- As with links, images also have a title attribute which can be used to provide extra information to the user. The title shows up as a tooltip on mouse hover in the image.However, this is not recommended — title has a number of accessibility problems, mainly based around the fact that screen reader support is very unpredictable and most browsers won't show it unless you are hovering with a mouse (so e.g. no access to keyboard users.-->
+    <img src="triceratops.avif" alt="Triceratops, a herbivorous dinosaur" width="300" height="300"
+        title="Triceratops, a herbivorous dinosaur">
+
+    <!--There are a number of ways that you could add a caption to go with your image. For example, there would be nothing to stop you from doing this:-->
+    <div class="figure">
+        <img src="triceratops.avif" alt="A imagined image of Triceratops" width="400" height="341" />
+
+        <p> Triceratops was one of the last-known non-avian dinosaurs and lived until the Cretaceous–Paleogene
+            extinction event 66 million years ago. </p>
+    </div>
+
+    <!--This is OK. But there is a problem here: there is nothing that semantically links the image to its caption, which can cause problems for screen readers.A better solution, is to use the HTML <figure> and <figcaption> elements. The <figcaption> element tells browsers, and assistive technology that the caption describes the other content of the <figure> element-->
+    <figure>
+        <img src="triceratops.avif" alt="A imagined image of Triceratops" width="400" height="341" />
+
+        <figcaption>
+            Triceratops was one of the last-known non-avian dinosaurs and lived until the Cretaceous–Paleogene
+            extinction event 66 million years ago.
+        </figcaption>
+    </figure>
+
+</body>
+
+</html>

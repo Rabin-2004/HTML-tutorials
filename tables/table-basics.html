@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--A table allows you to quickly and easily look up values that indicate some kind of connection between different types of data. For tables to be effective on the web, you need to provide some styling information with CSS, as well as good solid structure with HTML-->
+    <!--HTML tables should be used for tabular data. In older times when CSS supoort was not developed, tables were used to design the page layout one row of header and nav others containerd main divided into many columns for sections. Nowadays, table should only be used for tabular data. -->
+
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Will</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+    <!--Table is created in HTML using the <table> tag. The <tr> table row tag starts the row of the table. The <th> table header tag, is used to write the headers for each row. In HTML, table data is filled in rows first row, then second row and so on. The <td> table data tag is used to fill data into the table. Without styling the data will not have its border. -->
+
+    <!--Table headers aren't actually necessary for table to function but are increadinly useful for accessibility. Tables headers also have an added benefit — along with the scope attribute. They allow you to make tables more accessible by associating each header with all the data in the same row or column. Screen readers are then able to read out a whole row or column of data at once, which is pretty useful.-->
+
+    <!--The border in the table are given using CSS properties. There is also a deprecated attribute i.e.attribute used for older version of html not recommended for html5, called border which used to give the table border.-->
+
+    <!--Sometimes we want some cells to span multiple rows or columns. In such cases, we have colspan and rowspan attributes for <th> or <td> .These attributes take an integer value. for eg colspan=2 means that the cell will span two columns and so on.-->
+
+
+        <hr>
+
+    <table>
+        <tr>
+            <th colspan="2">Animals</th>
+        </tr>
+        <tr>
+            <th colspan="2">Hippopotamus</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Horse</th>
+            <td>Mare</td>
+        </tr>
+        <tr>
+            <td>Stallion</td>
+        </tr>
+        <tr>
+            <th colspan="2">Crocodile</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Chicken</th>
+            <td>Hen</td>
+        </tr>
+        <tr>
+            <td>Rooster</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

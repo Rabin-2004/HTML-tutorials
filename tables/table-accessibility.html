@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Accessibility</title>
+</head>
+<body>
+    <!--Visually impaired people often use a screen reader that reads out information on web pages to them. This is no problem when you're reading plain text but interpreting a table can be quite a challenge for a blind person.-->
+
+    <!--First step of making table accesible is using table headers. The combination of column and row headers will identify and interpret the data in each cell so that screen reader users can interpret the table similarly to how a sighted user does. The example of <th> is on the table-basics page-->
+    
+    <!--You can give your table a caption by putting it inside a <caption> element and nesting that inside the <table> element. You should put it just below the opening <table> tag. the caption is meant to contain a description of the table contents. This is useful for all readers wishing to get a quick idea of whether the table is useful to them as they scan the page. Screen readers will also read the caption first and then the user can decide if they want to hear the table in detail-->
+        <table>
+            <caption>
+                <h1>Residents in the building</h1>
+            </caption>
+            <tr>
+                <th>S.n</th>
+                <th> First Name</th>
+                <th> Second Name </th>
+                <th> Contact Number </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>R</td>
+                <td>P</td>
+                <td>123445</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>S</td>
+                <td>B</td>
+                <td>445566</td>
+            </tr>
+        </table>
+
+<!--Another way is using <thead>, <tfoot>, <tbody> for accessibility. The <thead> for table includes the headers generally the first row or column of table. The <tbody> includes main body of the table and <tfoot> includes the footer of table genrally the last row that includes sum  of each items etc -->
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>S.N.</th>
+        <th>Items</th>
+        <th>Price</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr>
+        <td>1</td>
+        <td>First</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Second</td>
+        <td>100</td>
+    </tr>
+    <tr>
+</tbody>
+
+<tfoot>
+    <tr>
+        <th colspan="2"> Total Price</td>
+        <td> 200</td>
+    </tr>
+</tfoot>
+</table>
+
+<!--The scope attribute can be added to the <th> element to tell screen readers exactly what cells the header is a header for — is it a header for the row it is in, or the column. Taking example of the above table.-->
+    <hr>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">S.N.</th>
+        <th scope="col">Items</th>
+        <th scope="col">Price</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr>
+        <td>1</td>
+        <td>First</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Second</td>
+        <td>100</td>
+    </tr>
+    <tr>
+</tbody>
+
+<tfoot>
+    <tr>
+        <th colspan="2" scope="row"> Total Price</td>
+        <td> 200</td>
+    </tr>
+</tfoot>
+</table>
+
+<!--he same applies to headers for multiple grouped rows. Take another look at the "Items Sold August 2016" table, this time focusing on the rows with the "Amsterdam" and "Utrecht" headers (<th>). You'll notice that the "The Netherlands" header, also marked up as a <th> element, spans both rows, being the heading for the other two subheadings. Therefore, scope="rowgroup" should be specified on this header cell to help screen readers create the correct associations:-->
+
+    <hr>
+    <table>
+    <tr>
+        <th rowspan="2" scope="rowgroup">The Netherlands</th>
+        <th scope="row">Amsterdam</th>
+        <td>89</td>
+        <td>34</td>
+        <td>69</td>
+      </tr>
+      <tr>
+        <th scope="row">Utrecht</th>
+        <td>80</td>
+        <td>12</td>
+        <td>43</td>
+      </tr>
+    </table>
+
+<!--An alternative to using the scope attribute is to use id and headers attributes to create associations between headers and cells. The headers attribute takes a list of unordered, space-separated strings, each corresponding to the unique id of the <th> elements that provide headings for either a data cell (<td> element) or another header cell (<th> element). This gives your HTML table an explicit definition of the position of each cell in the table, defined by the header(s) for each column and row it is part of, kind of like a spreadsheet.. For it to work well, a table needs both column and row header.-->
+    <hr>
+    <table>
+        <thead>
+            <tr>
+              <th id="clothes" colspan="3">Clothes</th>
+            </tr>
+            <tr>
+              <th id="trousers" headers="clothes">Trousers</th>
+              <th id="skirts" headers="clothes">Skirts</th>
+              <th id="dresses" headers="clothes">Dresses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th id="belgium" rowspan="3">Belgium</th>
+              <th id="antwerp" headers="belgium">Antwerp</th>
+              <td headers="antwerp belgium clothes trousers">56</td>
+              <td headers="antwerp belgium clothes skirts">22</td>
+              <td headers="antwerp belgium clothes dresses">43</td>
+            </tr>
+          </tbody>
+          </table>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        input {
+            margin-bottom: 1vh;
+        }
+
+        p {
+            display: inline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--This page contains a form meant as a demonstration for input elements in a form-->
+    <!--Note that form willnot be submitted as the action.php file doesnot exist.-->
+    <h1> Demo Survey Form </h1>
+
+    <form action="./submit.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required placeholder="Enter your name">
+    <br>
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required>
+    <br>
+
+    <p> Sex: </p>
+    <label for="male"> Male </label>
+    <input type="radio" name="sex" id="male">
+    <label for="female"> Female </label>
+    <input type="radio" name="sex" id="female">
+    <br>
+
+    <label for="email"> Email: </label>
+    <input type="email" name="email" id="email">
+    <br>
+
+    <label for="contact">Phone Number:</label>
+    <input type="tel" name="contact" id="contact" pattern="[0-9]{10}" required placeholder="Enter your phone number">
+    <br>
+
+    <label for="dob"> Date of Birth:</label>
+    <input type="date" name="dob" id="dob">
+    <br>
+
+    <label for="color"> Pick your favorite Color:</label>
+    <input type="color" name="color" id="color" onchange="handleChange()" value="#000000">
+    <br>
+
+    <label for="range"> Pick a number:</label>
+    <input type="range" name="range" id="range" min="1" max="1000" value="500" onchange="handleChange()">
+    <p id="number-selected">Your number: 500</p>
+    <br>
+
+    <label for="url">URL:</label>
+    <input type="url" name="url" id="url" disabled placeholder="disabled">
+    <br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+
+    <script>
+        function handleChange() {
+            const color = document.getElementById('color').value;
+            const heading = document.querySelector('h1');
+            const range = document.getElementById('range').value;
+            const numberSelected = document.getElementById('number-selected');
+            heading.style.color = color;
+            numberSelected.innerHTML = `Your number: ${range}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+           handleChange();
+        });
+    </script>
+</body>
+
+</html>

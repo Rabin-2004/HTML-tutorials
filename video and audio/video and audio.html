@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Audio</title>
+</head>
+<body>
+    
+    <!-- The <video> allows users to embed a video in html -->
+        <video src="cosmos.mp4" controls width="400" height="400">
+            <p>
+                Your browser does not support the video tag. Here is a link instead:
+                <a href="cosmos.mp4"> Link to the video </a>
+            </p>
+        </video>
+    <!--In the above example, src attribute is the same as for <img> it gives a link to the video.-->
+    <!--The controls attribute adds video controls, like play, pause, and volume. It is necessary to give users ways to play or pause the video especially critical for the users with epilepsy-->
+
+    <!--The width and height attribute are used to give width and height to the video. They are written as unit less integers and give the width and height of an video in pixels.-->
+
+    <!--The <p> tag is used to provide a fallback for the video. If the browser doesn't support the video tag, the text inside the <p> tag will be displayed.-->
+
+        <video
+  controls
+  width="400"
+  height="400"
+  autoplay
+  loop
+  muted
+  preload="auto"
+  poster="head and meta tags/apple.jpg">
+  <source src="cosmos.mp4" type="video/mp4" />
+  <p>
+    Your browser doesn't support this video. Here is a
+    <a href="rabbit320.mp4">link to the video</a> instead.
+  </p>
+</video>
+
+<!--The autoplay attribute is used to play the video automatically when the page is loaded. It is used to give the video a start without the user having to click on the play button. It is not recommended to use autoplay as it can be annoying for the users.-->
+
+<!--The loop attribute is used to play the video in a loop. It is used to play the video again and again. It is used to give the video a loop effect. It is not recommended to use loop as it can be annoying for the users.-->
+
+<!--The muted attribute is used to mute the video. It is used to mute the video so that the user doesn't have to listen to the audio. It is used to give the video a silent effect. It is not recommended to use muted as it can be annoying for the users.-->
+
+<!--The preload attribute is used to preload the video. It is used to preload the video so that the user doesn't have to wait for the video to load. It is used to give the video a fast loading effect-->
+
+<!--The poster attribute is used to give a poster image to the video. It is used to give the video a poster image so that the user can see the poster image before the video starts. It is used to give the video a poster image effect. -->
+
+<hr>
+<!--The <audio> works the same as <video> with some small differences.-->
+<audio controls>
+    <source src="ImperialMarch60.wav" type="audio/wav">
+</audio>
+<!--The difference is that the <audio> element doesn't support the width/height and poster attributes —  there is no visual component, so there is nothing to assign a width or height to.-->
+
+<hr>
+<!--Providing transcripts for a video or audio is helpful for those with visual impairments and also in loud noise environment. This is done using the WEBVTT file and a <track> element.-->
+<!-- The WebVTT file format is described in the WebVTT.md document-->
+
+<audio controls>
+    <source src="ImperialMarch60.wav" type="audio/wav">
+    <track kind="subtitles" src="transcript.vtt" srclang="en" label="English">
+</audio>
+<!--Only visible in music players that allow captions. Immediate affect can be seen as even in the players that donot support subtitles, the option for subtitlw will be visible-->
+
+</body>
+</html>
