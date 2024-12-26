@@ -19,7 +19,7 @@
 
 <body>
     <!--This page contains a form meant as a demonstration for input elements in a form-->
-    <!--Note that form willnot be submitted as the action.php file doesnot exist.-->
+    <!--Note that form willnot be submitted as the submit.php file doesnot exist.-->
     <h1> Demo Survey Form </h1>
 
     <form action="./submit.php" method="post">
@@ -28,7 +28,7 @@
     <br>
 
     <label for="age">Age:</label>
-    <input type="number" name="age" id="age" required>
+    <input type="number" name="age" id="age" required min="1" max="200">
     <br>
 
     <p> Sex: </p>
@@ -63,6 +63,27 @@
     <input type="url" name="url" id="url" disabled placeholder="disabled">
     <br>
 
+    <label for="select">Select your favorite car:</label>
+    <select name="cars" id="cars">
+        <option value="koenigsegg" selected>Koenigsegg</option>
+        <option value="porsche">Porsche</option>
+        <option value="sedan">Sedan</option>
+        <option value="bmw">BMW</option>
+    </select>
+    <br>
+
+    <label for="browsers">Browsers:</label>
+    <input type="text" name="browsers" id="browsers" list="browsers-list">
+    <datalist id="browsers-list">
+        <option value="Chrome">
+        <option value="Mozilla Firefox">
+        <option value="Safari">
+        <option value="Edge">
+        <option value="Opera">
+        <option value="other">
+    </datalist>
+
+    <br>
     <input type="submit" value="Submit">
     <input type="reset" value="Reset">
 
